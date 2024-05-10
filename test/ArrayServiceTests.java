@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigInteger;
+
 class ArrayServiceTests {
     @Test
     public void _min_ReturnsMinimalValue() {
@@ -36,7 +38,7 @@ class ArrayServiceTests {
     public void _mult_ReturnsMultipleOfValues() {
         var array = new int[] {1, 4, 2, 3};
         var service = new ArrayService();
-        var expected = 24;
+        var expected = BigInteger.valueOf(24);
 
         var result = service._mult(array);
         Assertions.assertEquals(expected, result);
@@ -46,7 +48,7 @@ class ArrayServiceTests {
     public void _mult_ReturnsZero_When_OneValueIsZero() {
         var array = new int[] {1, 4, 2, 0, 3};
         var service = new ArrayService();
-        var expected = 0;
+        var expected = BigInteger.valueOf(0);
 
         var result = service._mult(array);
         Assertions.assertEquals(expected, result);

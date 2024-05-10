@@ -1,3 +1,5 @@
+import java.math.BigInteger;
+
 public class ArrayService {
     int _min(int[] source) {
         var result = source[0];
@@ -26,10 +28,10 @@ public class ArrayService {
         }
         return result;
     }
-    int _mult(int[] source) {
-        var result = 1;
+    BigInteger _mult(int[] source) {
+        var result = BigInteger.valueOf(1);
         for (int i = 0; i < source.length; i++) {
-            result *= source[i];
+            result = BigInteger.valueOf(source[i]).multiply(result);
         }
         return result;
     }
